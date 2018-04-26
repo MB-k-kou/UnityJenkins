@@ -9,14 +9,12 @@ public class MonobitBuilder {
 
     static string[] SCENES = FindEnabledEditorScenes();
 
-    static string APP_NAME = "YourProject";
-    static string TARGET_DIR = "target";
+    static string APP_NAME = "TestBuild";
 
     [MenuItem("Custom/CI/Build Mac OS X")]
     public static void PerformMacOSXBuild()
     {
-        string target_dir = APP_NAME + ".app";
-        GenericBuild(SCENES, TARGET_DIR + "/" + target_dir, BuildTargetGroup.iOS, BuildTarget.iOS, BuildOptions.None);
+        GenericBuild(SCENES, APP_NAME, BuildTargetGroup.iOS, BuildTarget.iOS, BuildOptions.None);
     }
 
     private static string[] FindEnabledEditorScenes()
