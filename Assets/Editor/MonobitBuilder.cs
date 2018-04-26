@@ -13,7 +13,7 @@ public class MonobitBuilder {
     static string TARGET_DIR = "target";
 
     [MenuItem("Custom/CI/Build Mac OS X")]
-    static void PerformMacOSXBuild()
+    public static void PerformMacOSXBuild()
     {
         string target_dir = APP_NAME + ".app";
         GenericBuild(SCENES, TARGET_DIR + "/" + target_dir, BuildTargetGroup.iOS, BuildTarget.iOS, BuildOptions.None);
