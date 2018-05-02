@@ -9,12 +9,22 @@ public class MonobitBuilder {
 
     static string[] SCENES = FindEnabledEditorScenes();
 
-    static string APP_NAME = "TestBuild";
-
     [MenuItem("Custom/CI/Build Mac OS X")]
     public static void PerformMacOSXBuild()
     {
-        GenericBuild(SCENES, APP_NAME, BuildTargetGroup.iOS, BuildTarget.iOS, BuildOptions.None);
+        GenericBuild(SCENES, "IOSBuild", BuildTargetGroup.iOS, BuildTarget.iOS, BuildOptions.None);
+    }
+
+    [MenuItem("Custom/CI/Build Android")]
+    public static void PerformAndroidBuild()
+    {
+        GenericBuild(SCENES, "AndroidBuild.apk", BuildTargetGroup.Android, BuildTarget.Android, BuildOptions.None);
+    }
+
+    [MenuItem("Custom/CI/Build Windows")]
+    public static void PerformWindowsBuild()
+    {
+        GenericBuild(SCENES, "WindowsBuild\\Release.exe", BuildTargetGroup.Standalone, BuildTarget.StandaloneWindows64, BuildOptions.None);
     }
 
     private static string[] FindEnabledEditorScenes()
