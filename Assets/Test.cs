@@ -6,6 +6,6 @@ public class Test : MonoBehaviour {
 
     void OnGUI()
     {
-        GUILayout.Label("Windows Version.");
+        GUILayout.Label("Android Version.");
     }
 }
